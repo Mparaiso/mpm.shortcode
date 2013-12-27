@@ -20,7 +20,7 @@ var div =function(attributes,content,context){
 var i =function(attributes,content,context){
 	var attrs="";
 	assert.equal(content,'content');
-	//assert.equal(attributes.class,"o\'brian is a smart\"guy");
+	assert.equal(attributes.class,"o\'brian is a smart guy");
 	if(attrs.class){
 		attrs += " class='"+attrs.class+"' ";
 	}
