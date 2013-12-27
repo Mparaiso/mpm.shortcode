@@ -3,7 +3,7 @@
 var assert=require('assert');
 var shortcode=require('../shortcode');
 var strings = {
-	i:'[i class="o\'brian is a smart guy"]content[/i]',
+	i:'[i class="o\'brian is a smart\"guy"]content[/i]',
 	p:"[p/]",
 	div:"[div class='content' id='#content']some content[/div]"
 };
