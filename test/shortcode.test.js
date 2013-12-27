@@ -1,6 +1,7 @@
 /*global describe,it,beforeEach*/
 "use strict";
 var assert=require('assert');
+var expect=require('chai').expect;
 var shortcode=require('../shortcode');
 var strings = {
 	i:'[i class="o\'brian is a smart\"guy"]content[/i]',
@@ -24,11 +25,15 @@ var i =function(attributes,content,context){
 	attrs += " class='"+attributes.class+"' ";
 	return "<i "+attrs+" >"+context.toUpper.call(content)+"</i>";
 };
+var p = function(attributes,content,context){
+    return "<p></p>";
+}
 describe('shortcode.ShortCode',function(){
 	beforeEach(function(){
 		this.shortCode= new shortcode.ShortCode(aContext);
 		this.shortCode.add('div',div);
 		this.shortCode.add('i',i);
+        this.shortCode.add('p',p);
 		this.shortCode.setDebug(true);
 	});
 	it('should parse div properly',function(){
@@ -43,6 +48,7 @@ describe('shortcode.ShortCode',function(){
 		done();
 	});
 	it('should parse properly a combinaison of shortcodes',function(){
-
+        var res=this.shortCode.parse(strings.i+strings.div+strings.p);
+        expect(res).to.include("<p></p>");
 	});
 });
