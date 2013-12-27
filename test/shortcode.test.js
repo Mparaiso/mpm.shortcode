@@ -38,4 +38,8 @@ describe('shortcode.ShortCode',function(){
 	it('should parse i properly',function(){
 		this.shortCode.parse(strings.i);
 	});
+	it('should render i properly',function(){
+		var res=this.shortCode.parse(strings.i);
+		console.log(res);
+	});
 });
