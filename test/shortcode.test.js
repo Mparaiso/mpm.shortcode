@@ -3,11 +3,13 @@
 var assert=require('assert');
 var shortcode=require('../shortcode');
 var strings = {
-	i:"[i]content[i]",
+	i:'[i class="o\'brian is a smart\"guy"]content[i]',
 	p:"[p/]",
 	div:"[div class='content' id='#content']some content[/div]"
 };
-var aContext ={};
+var aContext ={
+	toUpper:"".toUpperCase
+};
 var div =function(attributes,content,context){
 	assert.equal(attributes.class,'content');
 	assert.equal(attributes.id,"#content");
@@ -16,8 +18,14 @@ var div =function(attributes,content,context){
 	return "<div>"+content+"<div>";
 };
 var i =function(attrs,content,context){
+	var attrs="";
 	assert.equal(content,'content');
-}
+	assert.equal(attrs.class,"o\'brian is a smart\"guy");
+	if(attrs.class){
+		attrs += " class='"+attrs.class+"' ";
+	}
+	return "<i "+attrs+" >"+context.toUpper.call(content)+"</i>";
+};
 describe('shortcode.ShortCode',function(){
 	beforeEach(function(){
 		this.shortCode= new shortcode.ShortCode(aContext);
