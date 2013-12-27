@@ -39,7 +39,10 @@ describe('shortcode.ShortCode',function(){
 	});
 	it('should render i properly',function(done){
 		var res=this.shortCode.parse(strings.i);
-		console.log(res);
+		assert.equal(res,"<i  class='o\'brian is a smart\"guy'  >CONTENT</i>");
 		done();
+	});
+	it('should parse properly a combinaison of shortcodes',function(){
+
 	});
 });
