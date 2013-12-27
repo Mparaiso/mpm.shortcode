@@ -21,9 +21,7 @@ var i =function(attributes,content,context){
 	var attrs="";
 	assert.equal(content,'content');
 	assert.equal(attributes.class,"o\'brian is a smart guy");
-	if(attributes.class){
-		attrs += " class='"+attributes.class+"' ";
-	}
+	attrs += " class='"+attributes.class+"' ";
 	return "<i "+attrs+" >"+context.toUpper.call(content)+"</i>";
 };
 describe('shortcode.ShortCode',function(){
