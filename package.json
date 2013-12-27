@@ -1,0 +1,28 @@
+{
+    "name": "mpm.shortcode",
+    "version": "0.0.1",
+    "description": "shortcode api for nodejs",
+    "main": "shortcode.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Mparaiso/mpm.shortcode.git"
+    },
+    "keywords": [
+        "shortcode",
+        "templating",
+        "strings",
+        "utility"
+    ],
+    "devDependencies":{
+        "mocha": "*",
+        "chai": "*"
+    },
+    "author": "mparaiso",
+    "license": "LGPL",
+    "bugs": {
+        "url": "https://github.com/Mparaiso/mpm.shortcode/issues"
+    }
+}

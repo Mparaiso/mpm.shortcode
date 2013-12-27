@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ShortCode Test</title>
+</head>
+<body>
+	<h1>ShortCode Test</h1>
+	<script type="text/template" id="original-text">
+		[i format="upper" class="a-class" id="blip blop" name="O'brian"]this is a italic text[/i]
+		[i]nested shortcodes[i]do not work[/i][/i]
+		this is some normal text. there is awesome things here
+	    [p]this is a paragraph
+	</script>
+    <div id="result"></div>
+	<script type="text/javascript" src="shortcode.js"></script>
+	<script type="text/javascript">
+		var originalText = document.querySelector('#original-text').innerText;
+		console.log(originalText);
+		var shortCode = new ShortCode();
+		shortCode.add("i",function(attributes,content){
+			switch(attributes.format){
+				case"upper":
+					content=content.toUpperCase();
+					break;
+				case"lower":
+					content=content.toLowerCase();
+					break;
+			}
+			return "<i>"+content+"</i>";
+		});
+		shortCode.add('p',function(attributes,content){
+			return "<p>";
+		});
+		console.table([shortCode.tokenize(originalText)]);
+		console.log(shortCode.getTags());
+		document.querySelector('#result').innerText=shortCode.parse(originalText);
+	</script>
+</body>
+</html>
