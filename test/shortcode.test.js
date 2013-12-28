@@ -31,7 +31,7 @@ var p = function (attributes, content, context) {
 }
 describe('shortcode.ShortCode', function () {
     beforeEach(function () {
-        this.shortCode = new shortcode.ShortCode(aContext);
+        this.shortCode = shortcode.create(aContext);
         this.shortCode.add('div', div);
         this.shortCode.add('i', i);
         this.shortCode.add('p', p);
