@@ -51,5 +51,7 @@ describe('shortcode.ShortCode', function () {
     it('should parse properly a combinaison of shortcodes', function () {
         var res = this.shortCode.parse(strings.i + strings.div + strings.p);
         expect(res).to.include(P_RESULT);
+        expect(res).to.match(/\<\i.*?\>/);
+        expect(res).to.match(/\<div.*?\>/);
     });
 });

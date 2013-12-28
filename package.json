@@ -1,10 +1,10 @@
 {
     "name": "mpm.shortcode",
     "version": "0.0.1",
-    "description": "shortcode api for nodejs",
+    "description": "shortcode api for nodejs,nano templating library",
     "main": "shortcode.js",
     "scripts": {
-        "test": "mocha"
+        "test": "mocha -R list"
     },
     "repository": {
         "type": "git",
