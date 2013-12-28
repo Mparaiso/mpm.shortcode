@@ -8,6 +8,7 @@ license LGPL
 nano templating for nodejs and the browser. 
 
 __ShortCode__ allows javascript developpers to use a nano templating engine in their application.
+
 In a cms for instance , a content field can support shortcodes and allow users to write complex content
 without knowing HTML ( integrate a video player in a page for instance), and without the app allowing 
 the user to directly write HTML tags.
@@ -48,4 +49,4 @@ are valid shortcodes.
 	
 ####LIMITATIONS
 
-shortcodes cannot be nested ( FOR NOW )
+- shortcodes cannot be nested ( FOR NOW )
