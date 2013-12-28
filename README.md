@@ -22,7 +22,7 @@ npm install mpm.shorcode
 	// you can pass a context to the shortcode, 
 	// which will be avaiable to each shortcode.
 	context = { name:'foo'};
-	var myShortCodes = new shortcode.ShortCode(context);
+	var myShortCodes =  shortcode.create(context);
 	// let's define our first shortcode , that yields a video tag
 	var myShortCodes.add('video',function(attributes,content,context){
 		return "<video src='"+attributes.src+"' >"+content+"</video>";

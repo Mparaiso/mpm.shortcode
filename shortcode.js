@@ -123,6 +123,14 @@
     shortcode.ShortCode.attributes = /(\w+\=(\"|\').+?(\"|\')(?:(\W+|\s+)))/g;
     shortcode.ShortCode.attribute = /^(\w+)\=(\"|\')(.*)(\"|\')/;
     shortcode.ShortCode.ERROR_MESSAGE='error for tag :';
+    /**
+     * Factory Method
+     * @param  {Object} context 
+     * @return {shortcode.ShortCode} a shortcode builder
+     */
+    shortcode.create = function(context){
+        return new shortcode.ShortCode(context);
+    };
     if (typeof module !== 'undefined') {
         module.exports = shortcode;
     }
