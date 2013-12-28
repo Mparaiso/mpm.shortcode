@@ -1,6 +1,6 @@
 {
     "name": "mpm.shortcode",
-    "version": "0.0.21",
+    "version": "0.0.22",
     "description": "shortcode api for nodejs, nano templating library",
     "main": "shortcode.js",
     "scripts": {
