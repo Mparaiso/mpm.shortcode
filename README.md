@@ -45,9 +45,9 @@ npm install mpm.shorcode
 	
 Shortcodes can have closing tags or not :
 
-- [foo bar='baz'/]
-- [bar foo='fizz']
-- [baz fizz='foo'] content [/baz]
+- [foo bar="baz"/]
+- [bar foo="fizz"]
+- [baz fizz="foo"] content [/baz]
 
 are valid shortcodes.
 
